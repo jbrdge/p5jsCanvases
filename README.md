@@ -1,2 +1,12 @@
 # p5jsCanvases
 Animations built using p5js
+
+|   View  |   Description  |   Code   |   Image  |  
+|:--------------:|:-------------:|:-----------:|:--------------:|
+|[Cicuitboard](https://editor.p5js.org/jbrdge/present/wCNWR_xvJ)|Timed animation loop|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/circuitboard.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/circuitboard.png">|
+|[Floating Points](https://editor.p5js.org/jbrdge/present/zsY-AfIus)|Moving points through translation and rotation of canvas.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/floatingpoints.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/floatingPoints.png">|
+|[Noisty Bar Graph](https://editor.p5js.org/jbrdge/present/7XgbgcvzB)|Bar graph with animated bars changing heights.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/noisyBarGraph.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/noisyBarGraph.png">|
+|[Mouse Reactive Nodes](https://editor.p5js.org/jbrdge/present/TWolT_Vin)|Node graph which changes distance and color upon mouse movement.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/mouseReactiveNodes.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/mouseReactiveNodes.png">|
+|[Pie Chart](https://editor.p5js.org/jbrdge/present/IqnZYWGqY)|Randomly moving Pie Chart.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/pieChart.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/pieChart.png">|
+|[Rotating Nodes](https://editor.p5js.org/jbrdge/present/CCK5GWRiC)|Rotating Nodes, which make connections if within a certain distance of each other.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/rotatingNodes.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/rotatingNodes.png">|
+|[Running Bar Graph](https://editor.p5js.org/jbrdge/present/KyuWOYUNU)|Bar Graph that changes height and color based on a sinusoidal function and noise.|[View Code on Github](https://github.com/jbrdge/p5jsCanvases/blob/master/runningBarGraph.js)|<img align="center" width="120" src="https://raw.githubusercontent.com/jbrdge/p5jsCanvases/master/images/runningBarGraph.png">|
