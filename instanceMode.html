@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+<script>// Sketch One
+var s = function( p ) { // p could be any variable name
+  var end1x = [];
+  var end1y = [];
+  var end2x = [];
+  var end2y = [];
+  var d1= [];
+  var d2 = [];
+  var time=0;
+
+  p.setup = function() {
+    p.createCanvas(360, 360);
+    p.strokeWeight(2);
+    for(var i=0; i< 5; i++){
+      end1x.push(p.random(50,350));
+      end1y.push(p.random(50,350));
+      d1.push(p.dist(200,175,end1x[i],end1y[i]));
+      end2x.push(p.random(300,550));
+      end2y.push(p.random(50,350));
+      d2.push(p.dist(400,225,end2x[i],end2y[i]));
+    }
+  };
+
+  p.draw = function() {
+    p.randomSeed(1000);
+  	p.background(0);
+  	p.stroke(255);
+
+    //update nodes and connections
+    for(var i=0; i< 5; i++){
+      end1x[i] = 100+d1[i]*p.cos(time+i*p.PI/2.5)/2;
+      end1y[i] = 125+d1[i]*p.sin(time+i*p.PI/2.5)/2;
+      end2x[i] = 250+d2[i]*p.cos(time+i*p.PI/2.5)/2;
+      end2y[i] = 225+d2[i]*p.sin(time+i*p.PI/2.5)/2;
+      for(var n=0; n<5; n++){
+        if(p.dist(end1x[i],end1y[i],end2x[n],end2y[n])<130){
+          p.line(end1x[i],end1y[i],end2x[n],end2y[n]);
+        }
+      }
+      p.line(100,125,end1x[i],end1y[i]);
+      p.line(250,225,end2x[i],end2y[i]);
+      p.fill(50);
+      p.ellipse(end1x[i],end1y[i],15,15);
+      p.ellipse(end2x[i],end2y[i],15,15);
+      for(var j=0; j< 3; j++){
+        p.noFill();
+        p.stroke(255, 100*p.noise(10*j+time*2));
+        p.ellipse(end1x[i],end1y[i],20+15*j,20+15*j);
+        p.stroke(255, 100*p.noise(10*j+time*2+10));
+    	p.ellipse(end2x[i],end2y[i],20+15*j,20+15*j);
+      }
+      p.stroke(255);
+    }
+    time+=0.02;
+  };
+};
+var myp5 = new p5(s, 'c1');
+
+// Sketch Two
+var t = function( p ) { 
+  var listed = [];
+  var time=0;
+  p.setup = function() {
+    p.frameRate(5);
+    p.createCanvas(360, 360);
+    p.colorMode(p.HSB,360,100,100);
+    p.stroke(182,60,70);
+    p.strokeWeight(1);
+    for(var i=0; i<=35;i++){
+      listed.push(3*p.noise(i/30)*p.cos(time)+p.cos(time*2)-2);
+      p.fill(150+40*p.cos(i/20),80,90);
+      p.rect(10*i,0,10,listed[i]*50);
+      if(i<30){
+        p.strokeWeight(4);
+        p.stroke(282,60,170);
+        p.line(10*i+5,50*listed[i],10*i+15,50*listed[i+1]);
+      }
+    }
+  };
+
+  p.draw = function() {
+    p.translate(0,200);
+    p.background(255);
+    p.stroke(182,60,70);
+    listed.shift();
+    listed.push(3*p.noise(1+time)*p.cos(time)+p.cos(time*2)-2);
+    for(var i=0; i<=35;i++){
+      p.fill(150+40*p.cos(time+i/20),80,90);
+      p.strokeWeight(1);
+      p.rect(10*i,66,10,listed[i]*50);
+      if(i<30){
+        p.stroke(282,60,170);
+        p.strokeWeight(4);
+        p.line(10*i+5,50*listed[i]+66,10*i+15,50*listed[i+1]+66);
+      }
+    }            
+    p.stroke(0);
+    p.strokeWeight(5);
+    p.line(0,-200,0,160);
+    p.line(0,-200,360,-200);
+    p.line(360,-200,360,160);
+    p.line(0,160,360,160);
+    time+=0.1;
+  };
+};
+var myp5 = new p5(t, 'c2');
+</script>
+</head>
+
+<body>
+<div id="c1"style="  display: flex;
+  justify-content: center;
+  align-items: center;"></div>
+<div id="c2" style="  display: flex;
+justify-content: center;
+align-items: center;"></div>
+</body>
+</html>
